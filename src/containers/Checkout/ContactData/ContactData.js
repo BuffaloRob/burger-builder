@@ -15,13 +15,13 @@ class ContactData extends Component {
 
   render() {
     return (
-      <div>
+      <div className={classes.ContactData}>
         <h4>Enter your contact data</h4>
         <form>
-          <input type='text' name='name' placeholder='Your Name' />
-          <input type='email' name='email' placeholder='Your Email' />
-          <input type='text' name='street' placeholder='Your Street' />
-          <input type='text' name='postal' placeholder='Your Postal Code' />
+          <input type='text' name='name' placeholder='Your Name' className={classes.Input} />
+          <input type='email' name='email' placeholder='Your Email' className={classes.Input} />
+          <input type='text' name='street' placeholder='Your Street' className={classes.Input} />
+          <input type='text' name='postal' placeholder='Your Postal Code' className={classes.Input} />
           <Button btnType="Success">Order</Button>
         </form>
       </div>
