@@ -19,7 +19,8 @@ class ContactData extends Component {
         validation: {
           required: true
         },
-        valid: false
+        valid: false,
+        touched: false
       },
       street: {
         elementType: "input",
@@ -31,7 +32,8 @@ class ContactData extends Component {
         validation: {
           required: true
         },
-        valid: false
+        valid: false,
+        touched: false
       },
       zipCode: {
         elementType: "input",
@@ -43,9 +45,10 @@ class ContactData extends Component {
         validation: {
           required: true,
           minLength: 5,
-          maxLength: 5,
+          maxLength: 5
         },
-        valid: false
+        valid: false,
+        touched: false
       },
       country: {
         elementType: "input",
@@ -57,7 +60,8 @@ class ContactData extends Component {
         validation: {
           required: true
         },
-        valid: false
+        valid: false,
+        touched: false
       },
       email: {
         elementType: "input",
@@ -69,7 +73,8 @@ class ContactData extends Component {
         validation: {
           required: true
         },
-        valid: false
+        valid: false,
+        touched: false
       },
       deliveryMethod: {
         elementType: "select",
@@ -134,13 +139,13 @@ class ContactData extends Component {
 
     if (rules.required) {
       //trim() removes whitespace
-      isValid = value.trim() !== "" & isValid;
+      isValid = (value.trim() !== "") & isValid;
     }
     if (rules.minLength) {
-      isValid = value.length >= rules.minLength & isValid;
+      isValid = (value.length >= rules.minLength) & isValid;
     }
     if (rules.maxLength) {
-      isValid = value.length <= rules.maxLength & isValid;
+      isValid = (value.length <= rules.maxLength) & isValid;
     }
 
     return Boolean(isValid);
