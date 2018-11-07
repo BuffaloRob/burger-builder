@@ -130,7 +130,6 @@ class ContactData extends Component {
   };
 
   checkValidity(value, rules) {
-    console.log(this.state.orderForm.zipCode.valid);
     let isValid = true;
 
     if (rules.required) {
@@ -164,6 +163,8 @@ class ContactData extends Component {
             elementType={formElement.config.elementType}
             elementConfig={formElement.config.elementConfig}
             value={formElement.config.value}
+            invalid={!formElement.config.valid}
+            shouldValidate={formElement.config.validation}
             change={event => this.inputChangedHandler(event, formElement.id)}
           />
         ))}
