@@ -129,6 +129,7 @@ class ContactData extends Component {
       updatedFormElement.value,
       updatedFormElement.validation
     );
+    updatedFormElement.touched = true;
     updatedOrderForm[inputIdentifier] = updatedFormElement;
     console.log(updatedFormElement);
     this.setState({ orderForm: updatedOrderForm });
@@ -170,6 +171,7 @@ class ContactData extends Component {
             value={formElement.config.value}
             invalid={!formElement.config.valid}
             shouldValidate={formElement.config.validation}
+            touched={formElement.config.touched}
             change={event => this.inputChangedHandler(event, formElement.id)}
           />
         ))}
